@@ -13,6 +13,8 @@ body{
   font-family:"Times New Roman", Times, serif;
 }
 
+/* LANDING PAGE */
+
 .container{
   min-height:100vh;
   display:flex;
@@ -22,13 +24,11 @@ body{
   text-align:center;
 }
 
-/* Name */
 .name{
   font-size:18px;
   margin-bottom:22px;
 }
 
-/* Main links */
 .nav{
   display:flex;
   flex-direction:column;
@@ -40,9 +40,9 @@ body{
   text-decoration:none;
   color:black;
   font-size:18px;
+  cursor:pointer;
 }
 
-/* Footer */
 .footer{
   display:flex;
   flex-direction:column;
@@ -59,20 +59,71 @@ a:hover{
   text-decoration:underline;
 }
 
-/* Mobile tweaks */
-@media (max-width:600px){
+/* DESIGN PAGE */
 
-  .name{
-    font-size:22px;
-    margin-bottom:18px;
+.design-page{
+  display:none;
+  padding:40px;
+  min-height:100vh;
+}
+
+.design-title{
+  font-size:20px;
+  margin-bottom:40px;
+}
+
+.design-layout{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+
+.design-text{
+  max-width:520px;
+}
+
+.design-text h3{
+  font-weight:normal;
+  font-size:16px;
+  margin-bottom:20px;
+}
+
+.design-text h1{
+  font-weight:normal;
+  font-size:28px;
+  line-height:1.3;
+  margin-bottom:20px;
+}
+
+.design-text p{
+  font-size:18px;
+  line-height:1.5;
+}
+
+.design-image img{
+  width:520px;
+  height:auto;
+}
+
+.home-link{
+  margin-top:60px;
+}
+
+.home-link a{
+  text-decoration:none;
+  color:black;
+}
+
+/* MOBILE */
+
+@media (max-width:800px){
+
+  .design-layout{
+    flex-direction:column;
   }
 
-  .nav a{
-    font-size:24px;
-  }
-
-  .footer a{
-    font-size:18px;
+  .design-image img{
+    width:100%;
   }
 
 }
@@ -82,14 +133,16 @@ a:hover{
 
 <body>
 
-<div class="container">
+<!-- LANDING PAGE -->
+
+<div class="container" id="homePage">
 
   <div class="name">
     Leigh Annand
   </div>
 
   <div class="nav">
-    <a href="#">Design</a>
+    <a onclick="openDesign()">Design</a>
     <a href="#">Casting</a>
     <a href="#">HA HA HA</a>
   </div>
@@ -100,6 +153,62 @@ a:hover{
   </div>
 
 </div>
+
+
+<!-- DESIGN PAGE -->
+
+<div class="design-page" id="designPage">
+
+  <div class="design-title">
+    Design
+  </div>
+
+  <div class="design-layout">
+
+    <div class="design-text">
+
+      <h3>Landdd: Art Book Fair</h3>
+
+      <h1>
+      Created the visual identity for Landdd’s 3rd Annual Art Book Fair.
+      </h1>
+
+      <p>
+      The visual identity is referential to the various punctuative marks
+      ubiquitously found in our most beloved publications. Their abstracted
+      forms create an intriguing pattern with dynamism, engaging the audience
+      while feeling visually related to the subject of books. A screen printed
+      tote bag served as the accompanied collateral.
+      </p>
+
+    </div>
+
+    <div class="design-image">
+      <img src="images/artbook1.jpg">
+    </div>
+
+  </div>
+
+  <div class="home-link">
+    <a onclick="goHome()">Home</a>
+  </div>
+
+</div>
+
+
+<script>
+
+function openDesign(){
+  document.getElementById("homePage").style.display="none";
+  document.getElementById("designPage").style.display="block";
+}
+
+function goHome(){
+  document.getElementById("designPage").style.display="none";
+  document.getElementById("homePage").style.display="flex";
+}
+
+</script>
 
 </body>
 </html>
