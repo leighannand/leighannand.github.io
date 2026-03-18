@@ -10,7 +10,7 @@
 body{
   margin:0;
   background:white;
-  font-family: "Times New Roman", Times, serif;
+  font-family:"Times New Roman", Times, serif;
 }
 
 .container{
@@ -24,61 +24,55 @@ body{
 
 /* Name */
 .name{
-  font-size:22px;
-  margin-bottom:50px;
+  font-size:20px;
+  margin-bottom:22px;
 }
 
-/* Main navigation */
+/* Main links */
 .nav{
   display:flex;
   flex-direction:column;
-  gap:10px;
-  margin-bottom:90px;
+  gap:4px;
+  margin-bottom:60px;
 }
 
 .nav a{
   text-decoration:none;
   color:black;
-  font-size:22px;
+  font-size:20px;
 }
 
-/* Footer links */
+/* Footer */
 .footer{
   display:flex;
   flex-direction:column;
-  gap:5px;
+  gap:2px;
 }
 
 .footer a{
   text-decoration:none;
   color:black;
-  font-size:18px;
+  font-size:16px;
 }
 
 a:hover{
   text-decoration:underline;
 }
 
-/* ---------- Mobile adjustments ---------- */
-
+/* Mobile tweaks */
 @media (max-width:600px){
 
   .name{
-    font-size:24px;
-    margin-bottom:60px;
+    font-size:22px;
+    margin-bottom:18px;
   }
 
   .nav a{
-    font-size:26px;
+    font-size:24px;
   }
 
   .footer a{
-    font-size:20px;
-  }
-
-  .nav{
-    gap:16px;
-    margin-bottom:120px;
+    font-size:18px;
   }
 
 }
