@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      padding: 1.2vw 0 0 1.2vw; /* responsive edge spacing */
+      padding: 1.2vw 0 0 1.2vw;
       background: #ffffff;
       font-family: "Times New Roman", Times, serif;
       color: #111;
@@ -16,10 +16,10 @@
 
     /* BIO */
     .bio {
-      font-size: clamp(18px, 2.2vw, 32px); /* scales with screen */
+      font-size: clamp(18px, 2.2vw, 32px);
       line-height: 1.4;
       letter-spacing: -0.2px;
-      max-width: 95vw; /* allows full-width feel */
+      max-width: 95vw;
     }
 
     .bio a {
@@ -45,17 +45,47 @@
       color: #111;
     }
 
-    /* Improve readability on very large screens */
+    /* Prevent overly wide text on huge screens */
     @media (min-width: 1600px) {
       .bio {
         max-width: 1400px;
       }
     }
+
+    /* -------- MOBILE VERSION -------- */
+    @media (max-width: 768px) {
+
+      body {
+        padding: 10px 0 0 10px;
+      }
+
+      .bio {
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 0;
+        max-width: 95%;
+      }
+
+      .bottom {
+        font-size: 16px;
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+
+    /* Extra small phones */
+    @media (max-width: 420px) {
+      .bio {
+        font-size: 16px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+  <!-- BIO -->
   <div class="bio">
     Leigh Annand (b.1999 Portland, OR) work includes 
     <a href="design.html">art direction + design</a>, 
@@ -66,6 +96,7 @@
     PDF portfolio and CV available upon request.
   </div>
 
+  <!-- INDEX -->
   <div class="bottom">
     <a href="work.html">Index</a>
   </div>
