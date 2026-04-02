@@ -121,53 +121,6 @@
     <a href="work.html">Index</a>
   </div>
 
-  <!-- SCRIPT -->
-  <script>
-    const artLink = document.getElementById("art-link");
-    const container = document.getElementById("art-container");
-    const image = document.getElementById("art-image");
-    const caption = document.getElementById("art-caption");
-
-    const works = [
-      {
-        src: "images:/2024ABFIGFlyerBrown.png",
-        caption: "Alphabet Tee: Photo, Art Direction, Design"},
-      {
-        src: "image2.jpg",
-        caption: "Lookbook Study, 2024"
-      },
-      {
-        src: "image3.jpg",
-        caption: "Casting Direction, 2023"
-      }
-    ];
-
-    let currentIndex = 0;
-
-    // click text → reveal first image
-    artLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      container.style.display = "block";
-      currentIndex = 0;
-      updateImage();
-    });
-
-    // click image → next image
-    image.addEventListener("click", () => {
-      currentIndex++;
-
-      if (currentIndex >= works.length) {
-        currentIndex = 0; // loops
-      }
-
-      updateImage();
-    });
-
-    function updateImage() {
-      image.src = works[currentIndex].src;
-      caption.textContent = works[currentIndex].caption;
-    }
-  </script>
-
+ 
 </body>
 </html>
