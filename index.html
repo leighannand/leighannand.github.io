@@ -92,6 +92,33 @@
       .bio {
         font-size: 16px;
       }
+
+      /* Basic styling for gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            margin-top: 60px;
+            overflow: hidden; /* Hide the overflow to keep images contained */
+        }
+
+        .gallery-item {
+            display: none; /* Hide all items initially */
+            width: 100%; /* Ensure each item takes full width of container */
+            height: auto;
+            transition: opacity 1s ease-in-out; /* Smooth fade transition */
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 60%; /* Ensure media stretches to fit the container */
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+
     }
 
   </style>
@@ -111,6 +138,11 @@
   </div>
 
  
+        <!-- Image Gallery Section 1 -->
+        <section class="gallery" id="gallery1">
+            <div class="gallery-item" data-index="0">
+                <img src="../images:/2024ABFIGFlyerBrown.png" alt="Image 1">
+            </div>
 
  
 </body>
