@@ -26,27 +26,41 @@
       color: #111;
       text-decoration: underline;
       text-decoration-thickness: 1px;
+      cursor: pointer;
     }
 
     .bio a:hover {
       opacity: 0.6;
     }
 
-    /* IMAGE REVEAL */
-    #art-container {
+    /* IMAGE (hidden by default) */
+    .gallery {
       display: none;
-      margin-top: 20px;
-      max-width: 420px;
-    }
-
-    #art-image {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 100px;
       width: 100%;
-      cursor: pointer;
     }
 
-    #art-caption {
+    .gallery.show {
+      display: flex;
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 260px;
+      max-width: 70vw;
+      height: auto;
+    }
+
+    .caption {
       font-size: 12px;
-      margin-top: 6px;
+      margin-top: 8px;
+      color: #666;
     }
 
     /* INDEX (bottom-left) */
@@ -86,31 +100,14 @@
         bottom: 10px;
         left: 10px;
       }
-    }
 
-    @media (max-width: 420px) {
-      .bio {
-        font-size: 16px;
-      }
-
-      /* Basic styling for gallery */
-        .gallery {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            width: 100%;
-            margin: 0;
-            margin-top: 60px;
-            overflow: hidden; /* Hide the overflow to keep images contained */
-        }
-
-        .gallery {
+      .gallery {
         margin-top: 60px;
       }
 
       .gallery-item img {
         width: 200px;
-        }
+      }
     }
   </style>
 </head>
@@ -128,13 +125,24 @@
     PDF portfolio and CV available upon request.
   </div>
 
- 
-       <section class="gallery">
+  <!-- IMAGE -->
+  <section class="gallery" id="gallery">
     <div class="gallery-item">
       <img src="../images:/2024ABFIGFlyerBrown.png" alt="ABFIG Flyer">
       <div class="caption">ABFIG Flyer, 2024</div>
     </div>
   </section>
- 
+
+  <!-- SCRIPT -->
+  <script>
+    const artLink = document.getElementById("art-link");
+    const gallery = document.getElementById("gallery");
+
+    artLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      gallery.classList.toggle("show");
+    });
+  </script>
+
 </body>
 </html>
