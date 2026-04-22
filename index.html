@@ -3,185 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leigh Annand</title>
+  <title>Jacob Arvidson</title>
 
   <style>
     body {
       margin: 0;
-      padding: 1.2vw 0 0 1.2vw;
-      background: #ffffff;
       font-family: "Times New Roman", Times, serif;
-      color: #111;
+      background: #ffffff;
+      color: #000;
     }
 
-    /* BIO */
-    .bio {
-      font-size: clamp(16px, 2.2vw, 20px);
-      line-height: 1.2;
-      letter-spacing: -0.2px;
-      max-width: 100vw;
-
-   hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-
-  overflow-wrap: break-word;
-    }
-
-    .bio a {
-      color: #111;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      cursor: pointer;
-    }
-
-    .bio a:hover {
-      opacity: 0.6;
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 100px;
-      width: 100%;
-    }
-
-    .gallery.show {
-      display: flex;
-    }
-
-    .gallery-item {
-      display: none;
+    /* Center everything in top section */
+    .header {
       text-align: center;
+      padding: 80px 20px 40px;
     }
 
-    .gallery-item.active {
-      display: block;
+    .title {
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
-    .gallery-item img {
-      width: 420px; /* bigger image */
-      max-width: 85vw;
+    .email {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .link {
+      font-size: 12px;
+      margin-bottom: 40px;
+    }
+
+    .link a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* Gallery section */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding-bottom: 80px;
+    }
+
+    .photo-block {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .photo-block img {
+      width: 100%;
+      max-width: 500px;
       height: auto;
-      cursor: pointer;
+      display: block;
+      margin: 0 auto;
     }
 
     .caption {
-      font-size: 12px;
-      margin-top: 8px;
-      color: #666;
-      font-style: italic 
-    }
-
-    /* INDEX (bottom-left) */
-    .bottom {
-      position: fixed;
-      bottom: 1.2vw;
-      left: 1.2vw;
-      font-size: clamp(14px, 1.2vw, 20px);
-    }
-
-    .bottom a {
-      text-decoration: none;
-      color: #111;
-    }
-    /* MOBILE */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px 0 0 10px;
-        margin-bottom: 10px;
-     
-      }
-
-      .bio {
-        font-size: 18px;
-        line-height: 1.3;
-        max-width: 95%;
-
-            hyphens: auto;
-    -webkit-hyphens: auto;
-    overflow-wrap: break-word;
-      }
-
-      .bottom {
-        font-size: 16px;
-        bottom: 10px;
-        left: 10px;
-      }
-     
-      .gallery {
-  margin-top: 20px;
-}
-
-     .gallery-item img {
-        width: 300px;
-       }
-      
-      }
+      margin-top: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- BIO -->
-  <div class="bio">
-    Leigh Annand (b.1999 Portland, OR) work includes 
-    <a href="#" id="art-link">art direction + design</a>, 
-    <a href="casting.html">casting</a>, and 
-    <a href="projects.html">more</a>. 
-    To get in touch, or inquire further about work please send an email to 
-    <a href="mailto:annand.leigh@gmail.com">annand.leigh@gmail.com</a>. 
-    PDF portfolio and CV available upon request.
-  </div>
+  <!-- Top centered content -->
+  <div class="header">
+    <div class="title">Jacob Arvidson</div>
 
-  <!-- GALLERY -->
-  <section class="gallery" id="gallery">
-
-      <div class="gallery-item active">
-      <img src="../images:/ABFforweb2.png" alt="Work 1">
-      <div class="caption">Landdd Art Book Fair, Art Direction and Design</div>
-    </div>
-    
-    <div class="gallery-item">
-      <img src="../images:/Alphabetteeforwebsite.png" alt="Work 2">
-      <div class="caption">Alphabet Tee, Photo and Apparel Design</div>
+    <div class="email">
+      <a href="mailto:youremail@example.com">jarvidson23@gmail.com</a>
     </div>
 
-
-  </section>
-
-  <!-- INDEX BUTTON -->
-  <div class="bottom">
-    <a href="index.html">Index</a>
+    <div class="link">
+      <a href="info.html">Information</a>
+    </div>
   </div>
 
-  <!-- SCRIPT -->
-  <script>
-    const artLink = document.getElementById("art-link");
-    const gallery = document.getElementById("gallery");
-    const items = document.querySelectorAll(".gallery-item");
+  <!-- Centered image gallery -->
+  <div class="gallery">
 
-    let currentIndex = 0;
+    <div class="photo-block">
+      <img src="https://via.placeholder.com/800x500" alt="Image 1">
+      <div class="caption">Caption for image one</div>
+    </div>
 
-    // Toggle gallery visibility
-    artLink.addEventListener("click", function(e) {
-      e.preventDefault();
-      gallery.classList.toggle("show");
-    });
+    <div class="photo-block">
+      <img src="https://via.placeholder.com/800x500" alt="Image 2">
+      <div class="caption">Caption for image two</div>
+    </div>
 
-    // Click-through gallery
-    items.forEach(item => {
-      item.addEventListener("click", () => {
-        items[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex + 1) % items.length;
-        items[currentIndex].classList.add("active");
-      });
-    });
-  </script>
+    <div class="photo-block">
+      <img src="https://via.placeholder.com/800x500" alt="Image 3">
+      <div class="caption">Caption for image three</div>
+    </div>
+
+  </div>
 
 </body>
 </html>
